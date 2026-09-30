@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LIYANSH PICKLES - Traditional pickles, spice powders and homemade food products.">
+  <title>LIYANSH PICKLES | Traditional Taste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">LIYANSH <span>PICKLES</span></a>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+      <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <div>
+          <p class="eyebrow">TRADITIONAL • TASTY • AUTHENTIC</p>
+          <h1>Homemade Taste,<br><span>Made With Love.</span></h1>
+          <p class="hero-text">Authentic Indian pickles, spice powders and delicious food products made for everyday meals.</p>
+          <div class="hero-buttons">
+            <a class="btn primary" href="#products">Shop Products</a>
+            <a class="btn secondary" href="https://wa.me/919346594054?text=Hello%20LIYANSH%20PICKLES,%20I%20would%20like%20to%20place%20an%20order." target="_blank">Order on WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="jar">🥭</div>
+          <h3>Authentic Pickles</h3>
+          <p>Traditional flavours for your family table.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container category-grid">
+        <a href="#pickles"><span>🥭</span><strong>Pickles</strong><small>Traditional flavours</small></a>
+        <a href="#powders"><span>🌶️</span><strong>Powders</strong><small>Fresh spice blends</small></a>
+        <a href="#others"><span>🍘</span><strong>Other Products</strong><small>Tasty favourites</small></a>
+      </div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">OUR PRODUCTS</p>
+          <h2>Choose Your Favourite</h2>
+          <p>Browse our sample range. You can replace these products, photos and prices anytime.</p>
+        </div>
+
+        <div class="search-row">
+          <input id="search" type="search" placeholder="Search products..." oninput="filterProducts()">
+          <select id="categoryFilter" onchange="filterProducts()">
+            <option value="all">All Categories</option>
+            <option value="pickles">Pickles</option>
+            <option value="powders">Powders</option>
+            <option value="others">Other Products</option>
+          </select>
+        </div>
+
+        <div id="pickles" class="product-group">
+          <h3>🥭 Pickles</h3>
+          <div class="product-grid">
+            <article class="product-card" data-category="pickles" data-name="Mango Pickle">
+              <div class="product-image mango">🥭</div><div class="product-info">
+                <h4>Mango Pickle</h4><p>Classic spicy mango pickle.</p><div class="price">₹180 <small>/ 250g</small></div>
+                <button onclick="order('Mango Pickle - 250g - ₹180')">Order Now</button>
+              </div>
+            </article>
+            <article class="product-card" data-category="pickles" data-name="Gongura Pickle">
+              <div class="product-image gongura">🌿</div><div class="product-info">
+                <h4>Gongura Pickle</h4><p>Andhra-style tangy gongura.</p><div class="price">₹190 <small>/ 250g</small></div>
+                <button onclick="order('Gongura Pickle - 250g - ₹190')">Order Now</button>
+              </div>
+            </article>
+            <article class="product-card" data-category="pickles" data-name="Lemon Pickle">
+              <div class="product-image lemon">🍋</div><div class="product-info">
+                <h4>Lemon Pickle</h4><p>Bold, tangy and spicy flavour.</p><div class="price">₹170 <small>/ 250g</small></div>
+                <button onclick="order('Lemon Pickle - 250g - ₹170')">Order Now</button>
+              </div>
+            </article>
+            <article class="product-card" data-category="pickles" data-name="Tomato Pickle">
+              <div class="product-image tomato">🍅</div><div class="product-info">
+                <h4>Tomato Pickle</h4><p>Rich homemade tomato flavour.</p><div class="price">₹175 <small>/ 250g</small></div>
+                <button onclick="order('Tomato Pickle - 250g - ₹175')">Order Now</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div id="powders" class="product-group">
+          <h3>🌶️ Powders</h3>
+          <div class="product-grid">
+            <article class="product-card" data-category="powders" data-name="Sambar Powder">
+              <div class="product-image sambar">🌶️</div><div class="product-info">
+                <h4>Sambar Powder</h4><p>Aromatic South Indian spice blend.</p><div class="price">₹120 <small>/ 200g</small></div>
+                <button onclick="order('Sambar Powder - 200g - ₹120')">Order Now</button>
+              </div>
+            </article>
+            <article class="product-card" data-category="powders" data-name="Rasam Powder">
+              <div class="product-image rasam">🥣</div><div class="product-info">
+                <h4>Rasam Powder</h4><p>Fragrant blend for homestyle rasam.</p><div class="price">₹110 <small>/ 200g</small></div>
+                <button onclick="order('Rasam Powder - 200g - ₹110')">Order Now</button>
+              </div>
+            </article>
+            <article class="product-card" data-category="powders" data-name="Chilli Powder">
+              <div class="product-image chilli">🌶️</div><div class="product-info">
+                <h4>Chilli Powder</h4><p>Rich colour and traditional spice.</p><div class="price">₹140 <small>/ 250g</small></div>
+                <button onclick="order('Chilli Powder - 250g - ₹140')">Order Now</button>
+              </div>
+            </article>
+            <article class="product-card" data-category="powders" data-name="Curry Powder">
+              <div class="product-image curry">🍛</div><div class="product-info">
+                <h4>Curry Powder</h4><p>Everyday masala for delicious curries.</p><div class="price">₹130 <small>/ 200g</small></div>
+                <button onclick="order('Curry Powder - 200g - ₹130')">Order Now</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div id="others" class="product-group">
+          <h3>🍘 Other Products</h3>
+          <div class="product-grid">
+            <article class="product-card" data-category="others" data-name="Karam Podi">
+              <div class="product-image karam">🌶️</div><div class="product-info">
+                <h4>Karam Podi</h4><p>Spicy Andhra-style podi.</p><div class="price">₹130 <small>/ 200g</small></div>
+                <button onclick="order('Karam Podi - 200g - ₹130')">Order Now</button>
+              </div>
+            </article>
+            <article class="product-card" data-category="others" data-name="Peanut Podi">
+              <div class="product-image peanut">🥜</div><div class="product-info">
+                <h4>Peanut Podi</h4><p>Roasted peanut spice powder.</p><div class="price">₹150 <small>/ 200g</small></div>
+                <button onclick="order('Peanut Podi - 200g - ₹150')">Order Now</button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <p id="noResults" class="no-results">No products found.</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div><p class="eyebrow">ABOUT US</p><h2>Traditional flavour for modern families.</h2></div>
+        <div><p>LIYANSH PICKLES brings traditional Indian flavours to your home. Our sample catalogue includes pickles, spice powders and other food favourites.</p><p class="note">Product names, prices and descriptions on this demo can be changed before publishing.</p></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to taste the tradition?</h2>
+        <p>Send us your order directly on WhatsApp.</p>
+        <a class="btn primary" href="https://wa.me/919346594054?text=Hello%20LIYANSH%20PICKLES,%20I%20would%20like%20to%20place%20an%20order." target="_blank">💬 WhatsApp Us</a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-box">
+        <div><p class="eyebrow">CONTACT</p><h2>LIYANSH PICKLES</h2><p>Pickles • Powders • Traditional Food Products</p></div>
+        <div class="contact-details">
+          <p>📱 <strong>WhatsApp:</strong> 9346594054</p>
+          <p>📍 <strong>Location:</strong> Kurnool, Andhra Pradesh</p>
+          <p>📦 <strong>Shipping:</strong> Add your delivery areas</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><strong>LIYANSH PICKLES</strong><span>© 2026 All rights reserved.</span></div></footer>
+
+  <script>
+    function toggleMenu(){ document.getElementById('navMenu').classList.toggle('open'); }
+    function order(product){
+      const message = encodeURIComponent("Hello LIYANSH PICKLES, I want to order: " + product + ". Please confirm availability and delivery charges.");
+      window.open("https://wa.me/919346594054?text=" + message, "_blank");
+    }
+    function filterProducts(){
+      const q = document.getElementById('search').value.toLowerCase();
+      const cat = document.getElementById('categoryFilter').value;
+      let visible = 0;
+      document.querySelectorAll('.product-card').forEach(card => {
+        const matchText = card.dataset.name.toLowerCase().includes(q);
+        const matchCat = cat === 'all' || card.dataset.category === cat;
+        const show = matchText && matchCat;
+        card.style.display = show ? '' : 'none';
+        if(show) visible++;
+      });
+      document.querySelectorAll('.product-group').forEach(group => {
+        const cards = [...group.querySelectorAll('.product-card')];
+        group.style.display = cards.some(c => c.style.display !== 'none') ? '' : 'none';
+      });
+      document.getElementById('noResults').style.display = visible ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
